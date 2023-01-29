@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Your Company</span>
-            <Image className="h-16 w-12" src={logoImg} alt="LogoImage" width={100} height={100} />
+            <Image placeholder="blur" className="h-16 w-12" src={logoImg} alt="LogoImage" width={100} height={100} />
           </Link>
         </div>
         <div className="flex lg:hidden">

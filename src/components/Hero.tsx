@@ -96,7 +96,7 @@ export default function Hero() {
               <div className="latestWorks mb-10 sm:w-12/12 sm:h-6/12 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mt-8">
                 {works.map(work => (
                   <Link href={`/projects/${work.link}`} className="workCard sm:h-auto sm:w-auto bg-gray-200 p-1 sm:p-3 shadow-xl">
-                    <Image src={work.img} alt="WorkImage" className="h-full w-full" width={500} height={500} />
+                    <Image placeholder="blur" src={work.img} alt="WorkImage" className="h-full w-full" width={500} height={500} />
                   </Link>
                 ))}
               </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                 View All Projects <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <Image src={heroImg} alt="bottomBg" className="rounded-full sm:flex mt-20 mr-20 hidden border" width={400} height={400} />
+            <Image placeholder="blur" src={heroImg} alt="bottomBg" className="rounded-full sm:flex mt-20 mr-20 hidden border" width={400} height={400} />
           </div>
           <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
             <svg
