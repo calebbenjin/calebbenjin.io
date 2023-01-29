@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.bgShape {
+  width: 500px;
+  height: 400px;
+  z-index: -1;
+}
+
+.bgTopRIght {
+  z-index: -1;
+}
+.bgBottomRIght {
+  z-index: -1;
+}

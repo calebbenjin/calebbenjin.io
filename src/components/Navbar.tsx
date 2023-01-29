@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { FiTwitter, FiGithub, FiLinkedin, FiYoutube } from 'react-icons/fi'
+import logoImg from '../../public/logovmp.png'
+import Image from 'next/image'
 
 const navigation = [
-  { name: 'Portfolio', href: '#' },
-  { name: 'About me', href: '#' },
-  { name: 'My thoughts', href: '#' },
-  { name: 'Reviews', href: '#' },
-  { name: "Let's talk", href: '#' },
+  { name: 'Portfolio', href: '/' },
+  { name: 'About me', href: '/aboutme' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Reviews', href: '/reviews' },
+  { name: "Code Snippets", href: '/snippets' },
 ]
 
 const Navbar = () => {
@@ -15,13 +19,13 @@ const Navbar = () => {
 
 
   return (
-    <div className="px-6 pt-6 lg:px-8">
-      <nav className="flex items-center justify-between" aria-label="Global">
+    <div className="px-6 pt-6 sm:px-20 sm:z-20">
+      <nav className="flex items-center sm:z-20 justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Your Company</span>
-            <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-          </a>
+            <Image className="h-16 w-12" src={logoImg} alt="LogoImage" width={100} height={100} />
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -40,10 +44,19 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+        <div className="hidden sm:flex lg:flex-1 lg:justify-end">
+          <Link href="#" className="text-sm font-semibold sm:text-xl leading-6 text-gray-900">
+            <FiGithub />
+          </Link>
+          <Link href="#" className="text-sm font-semibold sm:text-xl sm:ml-8 leading-6 text-gray-900">
+            <FiTwitter />
+          </Link>
+          <Link href="#" className="text-sm font-semibold sm:text-xl sm:ml-8 leading-6 text-gray-900">
+            <FiLinkedin />
+          </Link>
+          <Link href="#" className="text-sm font-semibold sm:text-xl sm:ml-8 leading-6 text-gray-900">
+            <FiYoutube />
+          </Link>
         </div>
       </nav>
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -75,14 +88,20 @@ const Navbar = () => {
                   </a>
                 ))}
               </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
-                >
-                  Log in
-                </a>
-              </div>
+            </div>
+            <div className="flex flex-1 justify-center mt-32">
+              <Link href="#" className="text-sm font-semibold text-xl leading-6 text-gray-900">
+                <FiGithub />
+              </Link>
+              <Link href="#" className="text-sm font-semibold text-xl ml-8 leading-6 text-gray-900">
+                <FiTwitter />
+              </Link>
+              <Link href="#" className="text-sm font-semibold text-xl ml-8 leading-6 text-gray-900">
+                <FiLinkedin />
+              </Link>
+              <Link href="#" className="text-sm font-semibold text-xl ml-8 leading-6 text-gray-900">
+                <FiYoutube />
+              </Link>
             </div>
           </div>
         </Dialog.Panel>

@@ -1,9 +1,40 @@
+import Image from "next/image"
 import Navbar from "./Navbar"
+import bgTopRight from '../../public/DecoreTopRight.png'
+import bgBottomLeft from '../../public/bottombg.png'
+import heroImg from '../../public/profileimg1.png'
+// import heroImg from '../../public/HeroImg.png'
+import Link from "next/link"
+import workImg1 from '../../public/work1.png'
+import workImg2 from '../../public/work2.png'
+import workImg3 from '../../public/work3.jpg'
+
+
+const works = [
+  {
+    id: 1,
+    link: 'cases',
+    img: workImg1
+  },
+  {
+    id: 2,
+    link: 'cases',
+    img: workImg2
+  },
+  {
+    id: 3,
+    link: 'cases',
+    img: workImg3
+  }
+]
 
 export default function Hero() {
 
   return (
-    <div className="isolate bg-white">
+    <div className="isolate bg-white relative">
+      <div className="hidden bgShape bg-red-100 absolute top-0 left-40"></div>
+      <Image src={bgTopRight} alt="leftBg" className="absolute top-0 right-0 bgTopRIght" width={500} height={400} />
+      <Image src={bgBottomLeft} alt="bottomBg" className="absolute bottom-0 left-0 bgBottomRIght" width={500} height={400} />
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
           className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -32,37 +63,48 @@ export default function Hero() {
       </div>
       <Navbar />
       <main>
-        <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Announcing our next round of funding.{' '}
-                <a href="#" className="font-semibold text-indigo-600">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Read more <span aria-hidden="true">&rarr;</span>
-                </a>
+        <div className="relative px-6 sm:px-20">
+          <div className="flex sm:justify-between items-start flex-row-reverse sm:flex-row flex-col mx-auto">
+            <div className="mx-left max-w-1xl py-10 sm:py-32">
+              <div className="hidden sm:mb-8  sm:flex sm:justify-start">
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  Announcing our next round of funding.{' '}
+                  <a href="#" className="font-semibold text-indigo-600">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Data to enrich your online business
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
-                <a href="#" className="text-base font-semibold leading-7 text-gray-900">
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
+              <div className="text-left max-w-2xl">
+                <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-8xl">
+                  Caleb Benjamin 
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-gray-700">
+                  I am a self driven enthusiastic ReactJS Expert with a touch of NodeJS. And
+                  I helped Pay.com increase website performance by 60%, leading to more revenue. I can help your business do the same.
+                </p>
+                <div className="mt-10 flex items-center justify-start gap-x-6">
+                  <Link href="#" className="text-base border border-gray-300 px-6 py-3 font-semibold leading-7 text-gray-900">
+                    Schedule a call <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+                <h1 className="text-3xl font-bold tracking-tight text-gray-900 mt-10 sm:text-6xl">
+                  Latest Work
+                </h1>
+                
               </div>
+              <div className="latestWorks mb-10 sm:w-12/12 sm:h-6/12 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mt-8">
+                {works.map(work => (
+                  <Link href={`/projects/${work.link}`} className="workCard sm:h-auto sm:w-auto bg-gray-200 p-1 sm:p-3 shadow-xl">
+                    <Image src={work.img} alt="WorkImage" className="h-full w-full" width={500} height={500} />
+                  </Link>
+                ))}
+              </div>
+              <Link href="/projects" className=" bg-white shadow-lg text-base border border-gray-300 px-6 py-3 font-semibold leading-7 text-gray-900">
+                View All Projects <span aria-hidden="true">→</span>
+              </Link>
             </div>
+            <Image src={heroImg} alt="bottomBg" className="rounded-full sm:flex mt-20 mr-20 hidden border" width={400} height={400} />
           </div>
           <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
             <svg
