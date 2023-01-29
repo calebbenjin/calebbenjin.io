@@ -66,7 +66,7 @@ export default function Hero() {
         <div className="relative px-6 sm:px-20">
           <div className="flex sm:justify-between items-start flex-row-reverse sm:flex-row flex-col mx-auto">
             <div className="mx-left max-w-1xl py-10 sm:py-32">
-              <div className="hidden sm:mb-8  sm:flex sm:justify-start">
+              {/* <div className="hidden sm:mb-8  sm:flex sm:justify-start">
                 <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   Announcing our next round of funding.{' '}
                   <a href="#" className="font-semibold text-indigo-600">
@@ -74,14 +74,14 @@ export default function Hero() {
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
-              </div>
+              </div> */}
               <div className="text-left max-w-2xl">
                 <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-8xl">
                   Caleb Benjamin 
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-700">
                   I am a self driven enthusiastic ReactJS Expert with a touch of NodeJS. And
-                  I helped Pay.com increase website performance by 60%, leading to more revenue. I can help your business do the same.
+                  I helped PayForeign.com upgrade to PWA. I increase their website security and performance by 60%, leading to more revenue. I can help your business do the same.
                 </p>
                 <div className="mt-10 flex items-center justify-start gap-x-6">
                   <Link href="#" className="text-base border border-gray-300 px-6 py-3 font-semibold leading-7 text-gray-900">
